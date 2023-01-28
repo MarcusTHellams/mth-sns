@@ -1,0 +1,4 @@
+{
+  "topicName": "testTopic",
+  "topicArn": "arn:aws:sns:us-east-1:223480420633:testTopic"
+}

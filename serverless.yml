@@ -1,0 +1,39 @@
+service: mth-sns-project
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - 'sns:Publish'
+      Resource: 'arn:aws:sns:*:*:${self:custom.conf.topicName}'
+  environment:
+    TEST_TOPIC_ARN: ${self:custom.conf.topicArn}
+    STAGE: ${sls:stage}
+
+package:
+  individually: true
+
+plugins:
+  - serverless-esbuild
+
+custom:
+  esbuild:
+    bundle: true
+    minify: true
+  conf: ${file(config.json)}
+
+functions:
+  hello:
+    handler: handler.handler
+
+resources:
+  Resources:
+    SNSTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        DisplayName: SNS Test
+        TopicName: ${self:custom.conf.topicName}
