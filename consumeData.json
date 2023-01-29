@@ -1,0 +1,11 @@
+{
+  "Records": [
+    {
+      "Sns": {
+        "Timestamp": "2023-01-29T00:58:19.537Z",
+        "MessageId": "0829cb86-35e5-403a-9a6e-821e717797d2",
+        "Message": "This is from a JSON file."
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+consume:
+  handler: consumer.handler
+  description: Here to consume baby
+  events:
+    - sns:
+        topicName: ${self:custom.conf.topicName}
+        arn: ${self:custom.conf.topicArn}

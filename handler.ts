@@ -7,7 +7,7 @@ const { TEST_TOPIC_ARN, STAGE } = process.env;
 export const handler = async () => {
   try {
     const params: SNS.Types.PublishInput = {
-      Message: 'Hello World',
+      Message: 'Hello Marcus Timothy Hellams',
       TargetArn: TEST_TOPIC_ARN,
       MessageAttributes: {
         MessageType: {

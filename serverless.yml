@@ -29,8 +29,8 @@ custom:
   conf: ${file(config.json)}
 
 functions:
-  hello:
-    handler: handler.handler
+  - ${file(resources/functions/hello.yml)}
+  - ${file(resources/functions/sns.yml)}
 
 resources:
   Resources:
